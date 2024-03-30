@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Sneha's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: rgb(241, 141, 236);
+            color: #fff;
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgb(224, 26, 142);
+            color: #fff;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 20px;
+        }
+        .hero .leftSection {
+            flex: 1;
+            padding: 0 20px;
+        }
+        .hero .leftSection h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .hero .leftSection p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .hero .leftSection .purple {
+            color: rgb(121, 81, 158);
+        }
+        .hero .rightSection img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #fff;
+            color: rgb(224, 26, 142);
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: rgb(224, 26, 142);
+            color: #fff;
+        }
+        section {
+            padding: 50px 20px;
+        }
+        section h2 {
+            font-size: 2rem;
+            color: rgb(161, 11, 99);
+            margin-bottom: 20px;
+        }
+        section p {
+            margin-bottom: 20px;
+        }
+        section ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+        section.portfolio{
+            background: rgb(17, 17, 17)
+        }
+        .portfolio h1{
+            color:rgb(161, 11, 99);
+        }
+        .portfolio img {
+            height: 10%;
+            width: 10%;
+            height: min-content; 
+            border-radius: 5px; 
+        }
+        .portfolio-head{
+            color: rgb(12, 11, 11);
+            text-align: center;
+            margin-bottom: 1rem;
+            line-height: 0.5rem;
+            color: var(--primary);
+        }
+        .portfolio-head + p{
+            color: white;
+            font-family: 'Lato', sans-serif;
+            margin-bottom: 1rem;
+            text-align: center;
+            margin-bottom: 6rem;
+            font-weight: 400;
+        }
+        section.portfolio .card-grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            column-gap: 2rem;
+        }
+        section.portfolio .card-grid .card{
+            background: var(--white);
+            padding: 3rem 2rem;
+            position: relative;
+            text-align: center;
+            transition: all .2s ease;
+        }
+        section.portfolio .card-grid .card h2+a{
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        section.portfolio .card-grid .card p+a{
+            font-family: 'Lato', sans-serif;
+            color: var(--seconday);
+            line-height: 1.6;
+        }
+        section.portfolio .card-grid .card:hover{
+            background: var(--primary);
+        }
+        section.portfolio .card-grid .card:hover h2+a{
+            color: var(--white);
+        }
+        section.portfolio .card-grid .card:hover p+a{
+            color: var(--white);
+        }
+        section.contact{
+            background-color: white;
+        }
+        section.contact {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        section.contact input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensure padding and border are included in element's total width/height */
+        }
+        
+        section.contact [type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        section.contact h3{
+            color: rgb(147, 147, 253);
+        }
+        section.contact h2{
+            color: rgb(147, 147, 253);
+        }
+        section.contact h1{
+            color: rgb(161, 11, 99);
+        }
+        
+        section.contact input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        footer{
+            background-color: var(--bgDark);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 73% 94%, 0 100%);
+            text-align: center;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>Sneha's Portfolio</div>
+            <div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="leftSection">
+                <h1>Hi, my name is <span class="purple">Sneha Uniyal</span></h1>
+                <p>I am a pre-final year student pursuing <br> Bachelors of Technology. <br> I am a <span class="purple">Web Developer</span>.</p>
+                <a href="snehauniyal_resumef.pdf" class="btn download" download>Download CV</a>
+            </div>
+            <div class="rightSection">
+                <img src="web.jpg" alt="">
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>As a budding software engineer, I bring a blend of technical expertise and excellent communication skills to every project. With a proactive and adaptive approach, I thrive in dynamic environments. My enthusiasm for learning and strong problem-solving abilities drive my contributions, while my effective communication fosters seamless collaboration with teams and stakeholders.</p>
+            <h2>Educational Background</h2>
+            <ul>
+                <li><strong>Doon International School, Dehradun</strong> - Senior School Education (Science - PCM) - 2020-2021</li>
+                <li><strong>Doon International School, Dehradun</strong> - Secondary School Education - 2018-2019</li>
+                <li><strong>Banasthali Vidyapith</strong> - Bachelor of Technology (Information Technology) - 2021-2025</li>
+            </ul>
+            <h2>Skills</h2>
+            <h3>Technical Skills</h3>
+            <ul>
+                <li>Web Development</li>
+                <li>DBMS</li>
+                <li>Java</li>
+                <li>Data Structure</li>
+                <li>Machine learning</li>
+            </ul>
+            <h3>Soft Skills</h3>
+            <ul>
+                <li>Leadership and Teamwork</li>
+                <li>Decision Making</li>
+                <li>Problem Solving</li>
+                <li>Communication Skills</li>
+                <li>Critical Thinking</li>
+            </ul>
+        </section>
+        <section id="portfolio" class="portfolio">
+            <center><img src="resume-cv_6614677.png"></center>
+            <h1><center>MY PROJECTS</center></h1>
+            <br><br><br><br>
+            <div class="container">
+              <div class="card-grid">
+                <div class="card">
+                  <h2>Assignment 1</h2>
+                  <p>Link to source code of Assignment 1</p><br><br>
+                  <a href="https://github.com/snehauniyal10/Airline-Management" class="card" target="_blank" >Click here</a>
+                </div>
+                <div class="card">
+                  <h2>Assignment 2</h2>
+                  <p>Link to source code of Assignment 2</p><br><br>
+                  <a href="https://github.com/kops2211/Assignment-2" class="card" target="_blank" >Click here</a>
+                </div>
+                <div class="card">
+                  <h2>Class Assignments</h2>
+                  <p>Link to source codes of all Class Assignments</p><br>
+                  <a href="https://github.com/snehauniyal10/IWTClassExercises" class="card" target="_blank" >Click here</a>
+                </div>
+              </div>
+            </div>
+            </section>
+        
+            <section id="contact" class="contact"> 
+            <div class="container flex items-centre">
+              <div class="right flex-1">
+              <h2>Contact</h2>
+              <h3>Contact me at my <a href="mailto:snehauniyal10@gmail.com">email</a> or fill the form below</h3>
+              <form action="/submit_form.php" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name.." required>
+            
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email.." required>
+            
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+            
+                <input type="submit" value="Submit">
+              </form>
+              </div>
+            </div>
+            </section> 
+            <footer>
+                <p>&copy; 2024 Sneha Uniyal All rights reserved.</p>
+            </footer>
+            <script src="js.js"></script>
+            </main>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sneha Uniyal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
